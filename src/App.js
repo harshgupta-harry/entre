@@ -18,7 +18,7 @@ import {
 } from "../common/data/actions";
 import GoToMobile from "./components/GoToMobile";
 
-import JoinCall from "./components/connect/joining-call/JoiningCall";
+import OneToOneCall from "./components/connect/one-to-one-call/OneToOneCall";
 
 const App = (props) => {
   const { Component, pageProps } = props;
@@ -74,7 +74,7 @@ const App = (props) => {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <JoinCall />
+        <OneToOneCall />
         {/* <Component {...pageProps} /> */}
         {appModal ? (
           <GoToMobile
