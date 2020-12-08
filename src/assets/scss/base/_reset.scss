@@ -1,0 +1,120 @@
+// Import Base
+@import 'typography';
+
+// Base Element
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: color('black');
+    font-size: $base-font-size;
+    letter-spacing: 0.03em;
+    line-height: 1.7em;
+}
+
+a{
+    text-decoration:none;
+
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+img{
+    max-width: 100%;
+}
+
+section{
+    padding: 80px 0;
+}
+
+.container{
+    max-width: 1440px;
+    @media screen and(max-width: $br-xxl) {
+        max-width: 92%;
+    }
+}
+
+.divider{
+    height: 30px;
+    &__xs{
+        height: 10px;
+    }
+    &__sm{
+        height: 20px;
+    }
+    &__md{
+        height: 40px;
+    }
+    &__lg{
+        height: 60px;
+    }
+    &__xlg{
+        height: 80px;
+    }
+    &__xxlg{
+        height: 100px;
+    }
+}
+
+.modal{
+    &-content{
+        border: 0;
+        padding: 40px;
+        border-radius:10px;
+    }
+}
+
+// Tooltips
+.tooltip {
+    border-radius:10px;
+    >.tooltip-inner {
+        padding: 8px 15px;
+        font-weight: 500;
+        font-family: 'Lato';
+        color:color('white') !important;
+        letter-spacing: 0.01em;
+        font-size: $base-font-size - 3;
+        background-color: color('black') !important;
+    }
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
+.bs-tooltip-bottom .arrow::before {
+	border-bottom-color: color('black') !important;
+}
+
+.bs-tooltip-auto[x-placement^=top] .arrow::before,
+.bs-tooltip-top .arrow::before {
+	border-top-color: color('black') !important;
+}
+
+.bs-tooltip-auto[x-placement^=left] .arrow::before,
+.bs-tooltip-left .arrow::before {
+	border-left-color: color('black') !important;
+}
+
+.bs-tooltip-auto[x-placement^=right] .arrow::before,
+.bs-tooltip-right .arrow::before {
+	border-right-color: color('black') !important;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+
+.no__outline{
+    outline-style: none !important;
+
+    &:focus{
+        outline-style: none !important;
+    }
+}
+
+.modal{
+    background-color:rgba(255, 255, 255, 0.8) !important;
+}
+
+.width__full{
+    width:100%;
+}
+

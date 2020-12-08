@@ -1,0 +1,42 @@
+version: 0.2
+
+# env:
+#   variables:
+#     NODE_ENV: "production"
+
+phases:
+  install:
+    commands:
+      - echo Installing dependency...
+      # - apt-get update -y
+      # - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+      # - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+      # - apt-get update -y
+      # - apt-get install -y yarn
+      - npm install -g next
+      - yarn install
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --no-include-email --region us-east-1)
+  build:
+    commands:
+      - echo Build Next.JS project started on `date`
+      - echo Compiling the Node.js code...
+      - cp .env._$ENV .env.production
+      - export SENTRY_AUTH_TOKEN=$SENTRY_CLI_TOKEN
+      - yarn build
+      - echo Build Container started on `date`
+      - echo Building the Docker image...
+      - docker login -u imekinox -p asdqwe123
+      - docker build -t entre/web:$IMAGE_TAG .
+      - docker tag entre/web:$IMAGE_TAG 262905279692.dkr.ecr.us-east-1.amazonaws.com/entre/web:$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push 262905279692.dkr.ecr.us-east-1.amazonaws.com/entre/web:$IMAGE_TAG
+      - echo Writing image definitions file...
+      - printf '[{"name":"entre-web-%s","imageUri":"%s"}]' $IMAGE_TAG 262905279692.dkr.ecr.us-east-1.amazonaws.com/entre/web:$IMAGE_TAG > imagedefinitions.json
+artifacts:
+    files: imagedefinitions.json

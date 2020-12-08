@@ -1,0 +1,26 @@
+{
+   "applinks":{
+      "apps":[
+
+      ],
+      "details":[
+         {
+            "appID":"7NFBF883HG.com.joinentre",
+            "paths":[
+               "NOT /pro",
+               "NOT /summit",
+               "NOT /startup-pitch-competition",
+               "NOT /recover/*",
+               "NOT /reset/*",
+               "NOT /event/*",
+               "NOT /profile/*",
+               "NOT /blog/*",
+               "NOT /lp/*",
+               "NOT /upgrade",
+               "NOT /home",
+               "*"
+            ]
+         }
+      ]
+   }
+}

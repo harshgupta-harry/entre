@@ -1,0 +1,3 @@
+.animate__roate1 {
+    animation: roate1 1s linear infinite;
+    transform-origin: center; }
