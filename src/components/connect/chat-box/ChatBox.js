@@ -133,7 +133,47 @@ const ChatBox = ({ chatWidth, isRoomCall }) => {
         <ChatComponent isSenderUser={true} />
         <ChatComponent isSenderUser={false} />
 
-        <div className={styles.callMessage}>nckdsnc</div>
+        {isRoomCall && (
+          <div className={styles.callMessage}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                paddingLeft: 20,
+                paddingRight: 42,
+                paddingTop: 20,
+              }}
+            >
+              <div>
+                <img
+                  src="/images/meetings/Ellipse 519.png"
+                  alt=""
+                  style={{ height: 44, width: 44 }}
+                />
+              </div>
+              <div style={{ marginLeft: 16 }}>
+                <div className={styles.callRequestName}>Alex want to join</div>
+                <div className={styles.callRequestDescription}>
+                  Simplify interface andexperience since 2012. Feel..
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                paddingRight: 72,
+                paddingLeft: 72,
+                marginTop: 18,
+              }}
+            >
+              <div className={styles.callAccept}>Accept</div>
+              <div className={styles.callDecline}>Decline</div>
+            </div>
+          </div>
+        )}
       </div>
 
       <div
@@ -148,9 +188,10 @@ const ChatBox = ({ chatWidth, isRoomCall }) => {
           bottom: 0,
           width: chatWidth,
         }}
+        className={styles.box}
       >
         <input
-          className={`${styles.textinput}`}
+          className={styles.textinput}
           placeholder="Type your message here..."
         />
         <div

@@ -1,0 +1,22 @@
+.container {
+}
+
+.container ::-webkit-scrollbar {
+  width: 4px;
+  margin-right: 20px;
+}
+
+/* Track */
+.container ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.container ::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+}
+
+/* Handle on hover */
+.container ::-webkit-scrollbar-thumb:hover {
+  background: #e0e0e0;
+}

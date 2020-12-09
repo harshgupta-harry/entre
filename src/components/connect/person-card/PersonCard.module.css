@@ -12,6 +12,7 @@
   padding-left: 32px;
   padding-right: 32px;
   margin: 16px;
+  border-radius: 8px;
 }
 
 .onlineDot {
@@ -64,8 +65,13 @@
   align-items: center;
   cursor: pointer;
   margin-bottom: 32px;
+  color: #828282;
 }
 
+.cta:hover {
+  background-color: #18243a;
+  color: white;
+}
 .ctaText {
   font-family: Montserrat;
   font-style: normal;
@@ -78,6 +84,4 @@
   letter-spacing: 0.002em;
 
   /* Gray 3 */
-
-  color: #828282;
 }

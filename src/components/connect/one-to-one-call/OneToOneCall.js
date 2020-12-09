@@ -17,9 +17,9 @@ const OneToOneCall = ({ isRoomCall }) => {
         flexDirection: "row",
         overflow: "hidden",
       }}
+      className={styles.container}
     >
       <div
-        // className={styles.grid}
         style={{
           // position: "relative",
           background: "#F8F8F8",
@@ -32,6 +32,7 @@ const OneToOneCall = ({ isRoomCall }) => {
           paddingLeft: 36,
           paddingRight: 36,
           flexDirection: "column",
+          paddingTop: 70,
         }}
       >
         <Grid container direction="row" justify="center">
@@ -40,7 +41,12 @@ const OneToOneCall = ({ isRoomCall }) => {
           ))}
         </Grid>
 
-        <BottomButtons isRoomCall={isRoomCall} showMic={true} showExit={true} />
+        <BottomButtons
+          isRoomCall={isRoomCall}
+          showMic={true}
+          showExit={true}
+          showAdd={isRoomCall ? true : false}
+        />
       </div>
 
       <ChatBox chatWidth={chatWidth} isRoomCall={isRoomCall} />
