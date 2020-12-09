@@ -2,6 +2,70 @@ import React from "react";
 import styles from "./ChatBox.module.css";
 
 const ChatBox = () => {
+  const ChatComponent = ({ isSenderUser }) => {
+    return (
+      <div
+        style={{
+          marginTop: 30,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: isSenderUser ? "flex-end" : "flex-start",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 298,
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "row",
+          }}
+        >
+          {!isSenderUser && (
+            <div style={{ position: "relative" }}>
+              <img
+                src="/images/meetings/Ellipse 519.png"
+                alt=""
+                style={{ height: 44, width: 44 }}
+              />
+              {/* <div className={styles.onlineDot} /> */}
+            </div>
+          )}
+          <div
+            style={{
+              marginLeft: 15,
+              marginRight: 15,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: isSenderUser ? "flex-end" : "flex-start",
+            }}
+          >
+            <div className={styles.nameOnChat}>Jason Derulo</div>
+            <div className={styles.chatNameAbout}>
+              American Singer, Songwriter...
+            </div>
+          </div>
+          {isSenderUser && (
+            <div style={{ position: "relative" }}>
+              <img
+                src="/images/meetings/Ellipse 519.png"
+                alt=""
+                style={{ height: 44, width: 44 }}
+              />
+              {/* <div className={styles.onlineDot} /> */}
+            </div>
+          )}
+        </div>
+        <div className={styles.otherChatMessage}>
+          Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do lorem
+          ipsum dolor .
+        </div>
+        <div className={styles.otherChatMessage}>
+          I Really love your design. It’s Amazing !!!
+        </div>
+        <div className={styles.timeStampOfChat}>30 Seconds ago</div>
+      </div>
+    );
+  };
   return (
     <div className={styles.container}>
       <div
@@ -43,25 +107,11 @@ const ChatBox = () => {
           width: "35%",
         }}
       >
-        <div>
-          <div>
-            <div style={{ position: "relative" }}>
-              <img
-                src="/images/meetings/Ellipse 519.png"
-                alt=""
-                style={{ height: 44, width: 44, marginTop: 32 }}
-              />
-              <div className={styles.onlineDot} />
-            </div>
-          </div>
-          <div className={styles.otherChatMessage}>
-            Lorem ipsum dolor sit amet, consec tetur adipiscing elit, sed do
-            lorem ipsum dolor .
-          </div>
-          <div className={styles.otherChatMessage}>
-            I Really love your design. It’s Amazing !!!
-          </div>
-        </div>
+        <ChatComponent isSenderUser={false} />
+        <ChatComponent isSenderUser={false} />
+
+        <ChatComponent isSenderUser={true} />
+        <ChatComponent isSenderUser={false} />
       </div>
 
       <div

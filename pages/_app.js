@@ -14,7 +14,7 @@ import App from "../src/App";
 import "react-google-places-autocomplete/dist/index.min.css";
 import "../styles/global.css";
 import * as gtag from "../src/helpers/gtag";
-import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const persistConfig = {
   key: "root",
