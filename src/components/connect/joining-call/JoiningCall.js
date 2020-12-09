@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./JoiningCall.module.css";
+import BottomButtons from "../bottom-buttons//BottomButtons";
 
 const JoiningCall = () => {
   return (
@@ -77,30 +78,7 @@ const JoiningCall = () => {
           You can toogle your cam and mic while you’re waiting
         </span>
 
-        <a
-          style={{
-            height: 46,
-            width: 46,
-            backgroundColor: "#EB5757",
-            position: "absolute",
-            bottom: 60,
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-            borderRadius: "50%",
-          }}
-        >
-          <img
-            src="/images/meetings/group 2580.png"
-            alt=""
-            style={{
-              height: 20,
-              width: 24,
-              objectFit: "contain",
-            }}
-          />
-        </a>
+        <BottomButtons showMic={true} />
       </div>
     </div>
   );

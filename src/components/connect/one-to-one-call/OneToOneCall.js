@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./OneToOneCall.module.css";
 import PersonCard from "../person-card/PersonCard.js";
 import ChatBox from "../chat-box/ChatBox.js";
+import BottomButtons from "../bottom-buttons//BottomButtons";
+import Grid from "@material-ui/core/Grid";
 
 const OneToOneCall = () => {
   return (
@@ -14,75 +16,33 @@ const OneToOneCall = () => {
       }}
     >
       <div
+        className={styles.grid}
         style={{
           background: "#F8F8F8",
-          flexGrow: 1,
+          // flexGrow: 1,
           width: "65%",
           justifyContent: "center",
-          alignItems: "center",
+          // alignItems: "center",
           display: "flex",
-          overflow: "hidden",
+          overflowY: "auto",
+          paddingLeft: 36,
+          paddingRight: 36,
         }}
       >
-        <PersonCard />
-        <div
-          style={{
-            position: "absolute",
-            bottom: 60,
-            display: "flex",
-            flexDirection: "row",
-          }}
-        >
-          <a
-            style={{
-              height: 46,
-              width: 46,
-              backgroundColor: "#EB5757",
-              marginLeft: 12,
-              marginRight: 12,
-              justifyContent: "center",
-              alignItems: "center",
-              display: "flex",
-              flexDirection: "column",
-              borderRadius: "50%",
-            }}
-          >
-            <img
-              src="/images/meetings/group 2580.png"
-              alt=""
-              style={{
-                height: 20,
-                width: 24,
-                objectFit: "contain",
-              }}
-            />
-          </a>
-          <a
-            style={{
-              height: 46,
-              width: 46,
-              backgroundColor: "white",
-              marginLeft: 12,
-              marginRight: 12,
-              justifyContent: "center",
-              alignItems: "center",
-              display: "flex",
-              flexDirection: "column",
-              borderRadius: "50%",
-            }}
-          >
-            <img
-              src="/images/meetings/exit.png"
-              alt=""
-              style={{
-                height: 20,
-                width: 24,
-                objectFit: "contain",
-              }}
-            />
-          </a>
-        </div>
+        <Grid container direction="row" justify="center">
+          <PersonCard />
+          {/* <PersonCard />
+          <PersonCard />
+          <PersonCard />
+          <PersonCard />
+          <PersonCard />
+          <PersonCard />
+          <PersonCard /> */}
+        </Grid>
+
+        <BottomButtons showMic={true} showExit={true} />
       </div>
+
       <ChatBox />
     </div>
   );
