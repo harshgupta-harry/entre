@@ -77,8 +77,8 @@ const App = (props) => {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-
-        <OneToOneCall />
+        <OneToOneCall isRoomCall={true} />
+        {/* <JoinCall /> */}
 
         {/* <Component {...pageProps} /> */}
         {appModal ? (

@@ -3,7 +3,7 @@ import styles from "./PersonCard.module.css";
 import Grid from "@material-ui/core/Grid";
 const PersonCard = () => {
   return (
-    <Grid item sm={4} style={{ marginTop: 40 }}>
+    <Grid item sm={4} style={{ marginTop: 0 }}>
       <div className={styles.container}>
         <div style={{ position: "relative" }}>
           <img

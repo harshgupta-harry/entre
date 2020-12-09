@@ -4,8 +4,11 @@ import PersonCard from "../person-card/PersonCard.js";
 import ChatBox from "../chat-box/ChatBox.js";
 import BottomButtons from "../bottom-buttons//BottomButtons";
 import Grid from "@material-ui/core/Grid";
+import _ from "lodash";
 
-const OneToOneCall = () => {
+const OneToOneCall = ({ isRoomCall }) => {
+  const roomWidth = isRoomCall ? "75%" : "65%";
+  const chatWidth = isRoomCall ? "25%" : "35%";
   return (
     <div
       style={{
@@ -16,34 +19,31 @@ const OneToOneCall = () => {
       }}
     >
       <div
-        className={styles.grid}
+        // className={styles.grid}
         style={{
+          // position: "relative",
           background: "#F8F8F8",
           // flexGrow: 1,
-          width: "65%",
-          justifyContent: "center",
+          width: roomWidth,
+          justifyContent: isRoomCall ? "flex-start" : "center",
           // alignItems: "center",
           display: "flex",
           overflowY: "auto",
           paddingLeft: 36,
           paddingRight: 36,
+          flexDirection: "column",
         }}
       >
         <Grid container direction="row" justify="center">
-          <PersonCard />
-          {/* <PersonCard />
-          <PersonCard />
-          <PersonCard />
-          <PersonCard />
-          <PersonCard />
-          <PersonCard />
-          <PersonCard /> */}
+          {_.times(isRoomCall ? 6 : 1, (i) => (
+            <PersonCard />
+          ))}
         </Grid>
 
-        <BottomButtons showMic={true} showExit={true} />
+        <BottomButtons isRoomCall={isRoomCall} showMic={true} showExit={true} />
       </div>
 
-      <ChatBox />
+      <ChatBox chatWidth={chatWidth} isRoomCall={isRoomCall} />
     </div>
   );
 };

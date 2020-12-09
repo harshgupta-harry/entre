@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ChatBox.module.css";
 
-const ChatBox = () => {
+const ChatBox = ({ chatWidth, isRoomCall }) => {
   const ChatComponent = ({ isSenderUser }) => {
     return (
       <div
@@ -67,44 +67,64 @@ const ChatBox = () => {
     );
   };
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ width: chatWidth }}>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: 28,
+          // display: "flex",
+          // alignItems: "center",
+          // // padding: 28,
           borderBottom: "1px solid #B9B9B9",
-          height: 115,
+          // height: 115,
+          display: "flex",
+          flexDirection: "column",
         }}
       >
-        <div>
-          <span className={styles.header_title}>Chat Room</span>
-          <div className={styles.displayFlexRow} style={{ marginTop: 8 }}>
-            <div
-              style={{
-                backgroundColor: "#68C671",
-                height: 8,
-                width: 8,
-                borderRadius: 50,
-              }}
-            />
-            <span className={styles.header_name}>Jason Derulo - Online</span>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: 28,
+            // borderBottom: "1px solid #B9B9B9",
+            height: 115,
+          }}
+        >
+          <div>
+            <span className={styles.header_title}>Chat Room</span>
+            <div className={styles.displayFlexRow} style={{ marginTop: 8 }}>
+              <div
+                style={{
+                  backgroundColor: "#68C671",
+                  height: 8,
+                  width: 8,
+                  borderRadius: 50,
+                }}
+              />
+              <span className={styles.header_name}>Jason Derulo - Online</span>
+            </div>
           </div>
+          <div className={styles.header_close}>Close</div>
         </div>
-        <div className={styles.header_close}>Close</div>
+        {isRoomCall && (
+          <div className={styles.headerBar}>
+            <div className={styles.headerRooms}>
+              <span style={{ color: "#18243A" }}>Rooms</span>
+            </div>
+            <div className={styles.headerRooms}>Direct Message</div>
+          </div>
+        )}
       </div>
       <div
         style={{
           position: "absolute",
-          top: 115,
+          top: isRoomCall ? 218 : 115,
           bottom: 70,
           overflowY: "scroll",
           paddingLeft: 32,
           paddingRight: 32,
           marginTop: 15,
           marginBottom: 15,
-          width: "35%",
+          width: chatWidth,
         }}
       >
         <ChatComponent isSenderUser={false} />
@@ -112,6 +132,8 @@ const ChatBox = () => {
 
         <ChatComponent isSenderUser={true} />
         <ChatComponent isSenderUser={false} />
+
+        <div className={styles.callMessage}>nckdsnc</div>
       </div>
 
       <div
@@ -124,7 +146,7 @@ const ChatBox = () => {
           height: 70,
           position: "absolute",
           bottom: 0,
-          width: "35%",
+          width: chatWidth,
         }}
       >
         <input
