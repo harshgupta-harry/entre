@@ -18,7 +18,12 @@ import {
 } from "../common/data/actions";
 import GoToMobile from "./components/GoToMobile";
 
+
 import OneToOneCall from "./components/connect/one-to-one-call/OneToOneCall";
+
+import JoinCall from "./components/connect/joining-call/JoiningCall";
+import FeedRoom from "./components/connect/feed-room/FeedRoom";
+
 
 const App = (props) => {
   const { Component, pageProps } = props;
@@ -74,7 +79,9 @@ const App = (props) => {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+
         <OneToOneCall />
+
         {/* <Component {...pageProps} /> */}
         {appModal ? (
           <GoToMobile
