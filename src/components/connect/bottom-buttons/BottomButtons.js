@@ -1,6 +1,6 @@
 import React from "react";
 
-const BottomButtons = ({ isRoomCall, showMic, showExit }) => {
+const BottomButtons = ({ isRoomCall, showMic, showExit, showAdd }) => {
   const containerStyle = isRoomCall
     ? {
         // position: "absolute",
@@ -42,6 +42,32 @@ const BottomButtons = ({ isRoomCall, showMic, showExit }) => {
         >
           <img
             src="/images/meetings/group 2580.png"
+            alt=""
+            style={{
+              height: 26,
+              width: 34,
+              objectFit: "contain",
+            }}
+          />
+        </a>
+      )}
+      {showAdd && (
+        <a
+          style={{
+            height: 66,
+            width: 66,
+            backgroundColor: "#003399",
+            marginLeft: 12,
+            marginRight: 12,
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "column",
+            borderRadius: "50%",
+          }}
+        >
+          <img
+            src="/images/meetings/plus.png"
             alt=""
             style={{
               height: 26,

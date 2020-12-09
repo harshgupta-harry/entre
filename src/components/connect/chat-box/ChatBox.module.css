@@ -14,7 +14,29 @@
   flex-grow: 1;
 
   overflow: hidden;
+  margin-right: 10px;
 }
+
+.container ::-webkit-scrollbar {
+  width: 4px;
+  margin-right: 20px;
+}
+
+/* Track */
+.container ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.container ::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+}
+
+/* Handle on hover */
+.container ::-webkit-scrollbar-thumb:hover {
+  background: #e0e0e0;
+}
+
 .header_title {
   font-family: Montserrat;
   font-style: normal;
@@ -62,6 +84,7 @@
   /* Red */
 
   color: #eb5757;
+  cursor: pointer;
 }
 
 .headerBar {
@@ -104,7 +127,8 @@
 
   /* PC - Black */
 
-  color: #18243a;
+  color: black;
+  cursor: pointer;
 }
 .otherChatMessage {
   background: #f5f5f5;
@@ -165,15 +189,69 @@
 .callMessage {
   position: fixed;
   bottom: 80px;
-  /* width: 296px; */
+  width: 310px;
   display: flex;
+  flex-direction: column;
   height: 154px;
   background: #f5f5f5;
   border-radius: 12px;
 }
 
+.callRequestName {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  /* PC - Black */
+
+  color: #18243a;
+}
+
+.callRequestDescription {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 170%;
+  /* or 20px */
+
+  /* PC - Grey - 01 */
+
+  color: #b9b9b9;
+}
+
+.callAccept {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  /* PC - Green */
+
+  color: #68c671;
+  cursor: pointer;
+}
+
+.callDecline {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  /* Red */
+
+  color: #eb5757;
+  cursor: pointer;
+}
 .textBoxContainer {
-  border-top: "2px solid #B9B9B9";
+  border-top: 1px solid #b9b9b9;
   height: 40px;
   position: absolute;
   bottom: 0;
@@ -201,4 +279,14 @@
   /* PC - Grey - 01 */
 
   color: #b9b9b9;
+}
+
+.box input::-webkit-input-placeholder {
+  color: #b9b9b9;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: none;
+  }
 }
