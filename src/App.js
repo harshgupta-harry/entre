@@ -77,7 +77,8 @@ const App = (props) => {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <OneToOneCall isRoomCall={true} />
+        <FeedRoom />
+        {/* <OneToOneCall isRoomCall={true} /> */}
         {/* <JoinCall /> */}
 
         {/* <Component {...pageProps} /> */}

@@ -1,0 +1,106 @@
+.box__networking {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+.box__list_networking {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.box__list_networking:hover {
+  box-shadow: -50px 50px 50px 0px rgba(70, 70, 70, 0.1);
+}
+.box__list_networking:hover > a {
+  background-color: #33ccff;
+  color: white !important;
+}
+.box__list_networking .detail {
+  padding: 1.5rem;
+}
+.box__list_networking .detail .people {
+  width: 50%;
+  margin: 0 12px;
+}
+.box__list_networking .detail .people img {
+  width: 43px;
+  height: 43px;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-left: -12px;
+  border: 3px solid white;
+}
+.box__list_networking .detail span {
+  width: 50%;
+}
+.box__list_networking hr {
+  border-top: 1px solid #f2f2f2;
+}
+.box__list_networking > a {
+  width: 100%;
+  transition: 0.5s;
+  padding: 1rem;
+  background-color: white;
+}
+
+.bg__white {
+  background-color: #ffffff !important;
+}
+.list_networking_list {
+  margin-bottom: 1.5rem;
+}
+.font__size--16 {
+  font-size: 16px !important;
+}
+
+.thin {
+  font-weight: 100 !important;
+}
+
+.extra-light {
+  font-weight: 200 !important;
+}
+
+.light {
+  font-weight: 300 !important;
+}
+
+.regular {
+  font-weight: 400 !important;
+}
+
+.medium {
+  font-weight: 500 !important;
+}
+
+.semi_bold {
+  font-weight: 600 !important;
+}
+
+.bold {
+  font-weight: 700 !important;
+}
+
+.extra_bold {
+  font-weight: 800 !important;
+}
+
+.black {
+  font-weight: 900 !important;
+}
+
+.normal {
+  font-weight: normal !important;
+}
+
+.color__gray_4 {
+  color: #bdbdbd !important;
+}
+.font__size_14 {
+  font-size: 14px !important;
+}
+.color__blue {
+  color: #33ccff !important;
+}

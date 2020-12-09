@@ -1,0 +1,28 @@
+.bg__white {
+  background-color: #ffffff !important;
+}
+
+.section__footer {
+  padding: 26px 0 !important;
+}
+.color__gray_4 {
+  color: #bdbdbd !important;
+}
+.list__footer {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list__footer li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.list__footer li:last-child {
+  margin-right: 0;
+}
+.color__blue {
+  color: #33ccff !important;
+}
+.bold {
+  font-weight: 700 !important;
+}
